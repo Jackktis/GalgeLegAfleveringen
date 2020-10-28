@@ -1,6 +1,6 @@
 package com.example.galgelegafleveringen;
 
-import com.example.galgeleg.Galgelogik;
+import com.example.galgelegafleveringen.Galgelogik;
 
 public class BenytGalgelogik {
 
