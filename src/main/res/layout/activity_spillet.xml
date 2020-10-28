@@ -15,11 +15,13 @@
       android:layout_width="match_parent"
       android:layout_height="80dp"
       android:layout_marginTop="50dp"
+      android:layout_weight="1"
       >
     <TextView
           android:id="@+id/gaette_ord"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
+
 
           android:text="det der skal gættes"
           android:gravity="center"
@@ -57,6 +59,7 @@
   <EditText
       android:id="@+id/editTextTextPersonName"
       android:layout_width="wrap_content"
+      android:gravity="center"
       android:layout_height="wrap_content"
       android:layout_marginTop="30dp"
       android:ems="6"
