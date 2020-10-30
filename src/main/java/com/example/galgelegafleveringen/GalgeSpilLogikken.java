@@ -20,12 +20,13 @@ public class GalgeSpilLogikken {
         private boolean sidsteBogstavVarKorrekt;
         private boolean spilletErVundet =false;
         private boolean spilletErTabt = false;
-        private GalgeSpilLogikken logik;
+        //private GalgeSpilLogikken logik;
 
+
+            /*
         private GalgeSpilLogikken() {};
-        //singleTon pattern
-        public GalgeSpilLogikken getInstace()
-        {
+        //singleTon pattern - her opretter vi kun et spil
+        public GalgeSpilLogikken getInstace() {
          if(logik == null){
                 logik = new GalgeSpilLogikken();
                 return logik;
@@ -34,6 +35,7 @@ public class GalgeSpilLogikken {
                 return logik;
         }
 
+         */
 
         public ArrayList<String> getBrugteBogstaver() {
             return brugteBogstaver;
@@ -166,7 +168,6 @@ public class GalgeSpilLogikken {
             muligeOrd.addAll(new HashSet<String>(Arrays.asList(data.split(" "))));
 
             System.out.println("muligeOrd = " + muligeOrd);
-            startNytSpil();
         }
 
 

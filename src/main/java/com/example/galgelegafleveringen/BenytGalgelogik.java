@@ -1,5 +1,6 @@
 package com.example.galgelegafleveringen;
 
+/*
 import com.example.galgelegafleveringen.Galgelogik;
 
 public class BenytGalgelogik {
@@ -18,7 +19,7 @@ public class BenytGalgelogik {
     */
 
     // Kommentér ind for at hente ord fra et online regneark
-
+/*
     try {
       spil.hentOrdFraRegneark("12");
     } catch (Exception e) {
@@ -84,3 +85,5 @@ public class BenytGalgelogik {
     if (spil.erSpilletSlut()) return;
   }
 }
+
+ */

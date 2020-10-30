@@ -2,6 +2,7 @@ package com.example.galgelegafleveringen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -27,4 +28,5 @@ public class Start extends AppCompatActivity {
         intent.putExtra("sværhed",Sværhed);
         startActivity(intent);
     }
+
 }
