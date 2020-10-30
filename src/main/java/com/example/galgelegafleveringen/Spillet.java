@@ -2,16 +2,36 @@ package com.example.galgelegafleveringen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.galgelegafleveringen.Galgelogik;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.galgelegafleveringen.GalgeSpilLogikken;
+
+
+import java.util.ArrayList;
 
 public class Spillet extends AppCompatActivity {
+
+    String svaerhedsgrad, gaetOrdet;
+    TextView TVSvaerhedsgrad;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getI;
         setContentView(R.layout.activity_spillet);
+        svaerhedsgrad = getIntent().getExtras().getString("sværhed");
 
-        Galgelogik spil = new Galgelogik();
-        spil.startNytSpil();
+        try {
+          spillet.hentOrdFraRegneark(svaerhedsgrad);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        //Galgelogik spil = new Galgelogik();
+       // spil.startNytSpil();
     }
 }

@@ -28,12 +28,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <EditText
+        android:id="@+id/sværhedsgrad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="7"
+        android:gravity="center"
+        android:hint="sværhedsgrad"
+        android:textColorHint="@color/red"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/GalgeLeg"
-        android:layout_marginBottom="200dp"
+        android:layout_below="@+id/sværhedsgrad"
+        android:layout_marginBottom="128dp"
         android:backgroundTint="@color/red"
         android:text="@string/spil"
         android:textAllCaps="false"
@@ -41,7 +55,16 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1-12"
+        tools:layout_editor_absoluteX="191dp"
+        tools:layout_editor_absoluteY="456dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

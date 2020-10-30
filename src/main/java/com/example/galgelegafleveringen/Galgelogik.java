@@ -1,5 +1,5 @@
 package com.example.galgelegafleveringen;
-
+/*
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,14 +11,15 @@ import java.util.Random;
 
 public class Galgelogik {
   /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
+/*
   ArrayList<String> muligeOrd = new ArrayList<String>();
   private String ordet;
   private ArrayList<String> brugteBogstaver = new ArrayList<String>();
   private String synligtOrd;
-  private int antalForkerteBogstaver;
+  private int antalForkerteBogstaver = 0;
   private boolean sidsteBogstavVarKorrekt;
-  private boolean spilletErVundet;
-  private boolean spilletErTabt;
+  private boolean spilletErVundet =false;
+  private boolean spilletErTabt = false;
 
   public Galgelogik() {
     muligeOrd.add("bil");
@@ -69,9 +70,9 @@ public class Galgelogik {
 
   public void startNytSpil() {
     brugteBogstaver.clear();
-    antalForkerteBogstaver = 0;
-    spilletErVundet = false;
-    spilletErTabt = false;
+    //antalForkerteBogstaver = 0;
+    //spilletErVundet = false;
+    //spilletErTabt = false;
     if (muligeOrd.isEmpty()) throw new IllegalStateException("Listen over mulige ord er tom!");
     ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
     System.out.println("Nyt spil - det skjulte ord er: "+ordet);
@@ -144,6 +145,7 @@ public class Galgelogik {
   /**
    * Hent ord fra DRs forside (https://dr.dk)
    */
+/*
   public void hentOrdFraDr() throws Exception {
     String data = hentUrl("https://dr.dk");
     //System.out.println("data = " + data);
@@ -177,6 +179,7 @@ public class Galgelogik {
    * @throws Exception
    */
 
+/*
   public void hentOrdFraRegneark(String sværhedsgrader) throws Exception {
     String id = "1RnwU9KATJB94Rhr7nurvjxfg09wAHMZPYB3uySBPO6M";
 
@@ -206,3 +209,4 @@ public class Galgelogik {
     new Galgelogik().hentOrdFraRegneark("2");
   }
 }
+*/
