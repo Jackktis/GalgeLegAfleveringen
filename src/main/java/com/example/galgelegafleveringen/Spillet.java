@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class Spillet extends AppCompatActivity {
 
-    String orderet;
+    String orderet, synligOrd;
     TextView TVgætOrderet;
     GalgeSpilLogikken spillet;
 
@@ -39,8 +39,13 @@ public class Spillet extends AppCompatActivity {
 
          try {
              spillet = (GalgeSpilLogikken) b.get("galgeSpilLogik");
-
              orderet = spillet.getOrdet();
+
+             spillet.opdaterSynligtOrd();
+             synligOrd = spillet.getSynligtOrd();
+             TVgætOrderet.setText(synligOrd);
+
+
              System.out.println("vi har taget dette ord videre: "+ orderet);
 
          }catch (Exception e){
