@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.io.Serializable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -19,41 +21,32 @@ import java.util.ArrayList;
 
 public class Spillet extends AppCompatActivity {
 
+    String orderet;
+    TextView TVgætOrderet;
+    GalgeSpilLogikken spillet;
 
-  //  Executor bgThread = Executors.newSingleThreadExecutor(); // håndtag til en baggrundstråd
-   // Handler uiThread = new Handler(Looper.getMainLooper());
-    String svaerhedsgrad, gaetOrdet;
-    TextView TVSvaerhedsgrad;
-    ProgressBar progressBar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getIntent().getSerializableExtra("galgeSpilLogik");
         setContentView(R.layout.activity_spillet);
+         TVgætOrderet = findViewById(R.id.gaette_ord);
 
-       // TVSvaerhedsgrad = findViewById(R.id.gaette_ord);
+         // vi hiver vores information fra Start ind her.
+         Bundle b = getIntent().getExtras();
 
-        /*
-        TVSvaerhedsgrad.setText("henter...\n" );
+         try {
+             spillet = (GalgeSpilLogikken) b.get("galgeSpilLogik");
 
-        bgThread.execute(() -> {
-            try {
-                GalgeSpilLogikken spillet = new GalgeSpilLogikken();
-                spillet.hentOrdFraRegneark(svaerhedsgrad);
+             orderet = spillet.getOrdet();
+             System.out.println("vi har taget dette ord videre: "+ orderet);
 
-                uiThread.post(() -> {
-                    spillet.startNytSpil();
-                    spillet.opdaterSynligtOrd();
-                    spillet.logStatus();
-                    TVSvaerhedsgrad.setText(gaetOrdet);
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+         }catch (Exception e){
+             System.out.println("logikken blev ikke taget videre");
+         }
 
-         */
 
     }
 }

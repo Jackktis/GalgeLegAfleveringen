@@ -10,14 +10,14 @@ import android.os.Looper;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class Start extends AppCompatActivity {
+public class Start extends AppCompatActivity  {
     Button b;
-    String Sværhed;
+    String Sværhed, orderet;
     EditText sværhedgrad;
     TextView TVSværdhedsSkala;
     Executor bgThread = Executors.newSingleThreadExecutor(); // håndtag til en baggrundstråd
@@ -47,6 +47,7 @@ public class Start extends AppCompatActivity {
                     uiThread.post(() -> {
                         spillet.startNytSpil();
                         Intent intent = new Intent(this, Spillet.class);
+                        intent.putExtra("galgeSpilLogik", spillet);
                         startActivity(intent);
                     });
                 }else{

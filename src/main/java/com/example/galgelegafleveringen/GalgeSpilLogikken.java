@@ -3,13 +3,14 @@ package com.example.galgelegafleveringen;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 
-public class GalgeSpilLogikken {
+public class GalgeSpilLogikken implements Serializable {
 
         /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
         ArrayList<String> muligeOrd = new ArrayList<String>();
@@ -79,9 +80,12 @@ public class GalgeSpilLogikken {
             antalForkerteBogstaver = 0;
             spilletErVundet = false;
             spilletErTabt = false;
-            if (muligeOrd.isEmpty()) throw new IllegalStateException("Listen over mulige ord er tom!");
-            ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
-            System.out.println("Nyt spil - det skjulte ord er: "+ordet);
+            if (muligeOrd.isEmpty()) {
+                System.out.println("ingen ord under dette sværhedsgrad ");
+            } else {
+                ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
+            System.out.println("Nyt spil - det skjulte ord er: " + ordet);
+        }
         }
 
 
