@@ -20,8 +20,8 @@ import java.util.ArrayList;
 public class Spillet extends AppCompatActivity {
 
 
-    Executor bgThread = Executors.newSingleThreadExecutor(); // håndtag til en baggrundstråd
-    Handler uiThread = new Handler(Looper.getMainLooper());
+  //  Executor bgThread = Executors.newSingleThreadExecutor(); // håndtag til en baggrundstråd
+   // Handler uiThread = new Handler(Looper.getMainLooper());
     String svaerhedsgrad, gaetOrdet;
     TextView TVSvaerhedsgrad;
     ProgressBar progressBar;
@@ -32,8 +32,9 @@ public class Spillet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spillet);
 
-        svaerhedsgrad = getIntent().getExtras().getString("sværhed");
-        TVSvaerhedsgrad = findViewById(R.id.gaette_ord);
+       // TVSvaerhedsgrad = findViewById(R.id.gaette_ord);
+
+        /*
         TVSvaerhedsgrad.setText("henter...\n" );
 
         bgThread.execute(() -> {
@@ -52,6 +53,7 @@ public class Spillet extends AppCompatActivity {
             }
         });
 
+         */
 
     }
 }
