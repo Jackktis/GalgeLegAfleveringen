@@ -81,7 +81,7 @@ public class GalgeSpilLogikken {
         }
 
 
-        private void opdaterSynligtOrd() {
+        void opdaterSynligtOrd() {
             synligtOrd = "";
             spilletErVundet = true;
             for (int n = 0; n < ordet.length(); n++) {
