@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/ProeveOrd"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="61dp"
         android:layout_marginTop="20dp"
         android:text="brugte bogstaver: "
@@ -58,16 +58,16 @@
 
     <TextView
         android:id="@+id/ForkerteOrd"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="61dp"
         android:layout_marginTop="20dp"
-        android:text="forkerte bogstaver: "
+        android:text="forkerte bogstaver:"
         android:textAllCaps="false"
         android:textColor="@color/red"
         android:textSize="20sp" />
 
   <EditText
-      android:id="@+id/editTextTextPersonName"
+      android:id="@+id/ETGætBogstav"
       android:layout_width="wrap_content"
       android:gravity="center"
       android:layout_height="wrap_content"

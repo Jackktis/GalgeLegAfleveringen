@@ -21,8 +21,9 @@ import java.util.ArrayList;
 
 public class Spillet extends AppCompatActivity {
 
-    String orderet, synligOrd;
+    String orderet, synligOrd, bogstav;
     TextView TVgætOrderet;
+    EditText ETbogstav;
     GalgeSpilLogikken spillet;
 
 
@@ -33,6 +34,7 @@ public class Spillet extends AppCompatActivity {
         getIntent().getSerializableExtra("galgeSpilLogik");
         setContentView(R.layout.activity_spillet);
          TVgætOrderet = findViewById(R.id.gaette_ord);
+         ETbogstav = findViewById(R.id.ETGætBogstav);
 
          // vi hiver vores information fra Start ind her.
          Bundle b = getIntent().getExtras();
@@ -52,6 +54,16 @@ public class Spillet extends AppCompatActivity {
              System.out.println("logikken blev ikke taget videre");
          }
 
+        ETbogstav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bogstav = ETbogstav.getText().toString();
+                spillet.gætBogstav(bogstav);
+                spillet.opdaterSynligtOrd();
+                synligOrd = spillet.getSynligtOrd();
+                TVgætOrderet.setText(synligOrd);
+            }
+        });
 
     }
 }
