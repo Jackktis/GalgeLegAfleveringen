@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.galgelegafleveringen" >
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    package="com.example.galgelegafleveringen">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +11,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GalgeLegAfleveringen" >
-        <activity android:name=".Spillet" >
-        </activity>
-        <activity android:name=".Start" >
+        android:theme="@style/Theme.GalgeLegAfleveringen">
+        <activity android:name=".Tabt"></activity>
+        <activity android:name=".Vundet" />
+        <activity android:name=".Spillet" />
+        <activity android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

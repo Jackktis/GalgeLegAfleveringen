@@ -81,7 +81,7 @@ public class GalgeSpilLogikken implements Serializable {
         public int getAntalForkerteBogstaver() {
 
         if(antalForkerteBogstaver == 6){
-            spilletErTabt = false;
+            spilletErTabt = true;
         }
 
         return antalForkerteBogstaver;
