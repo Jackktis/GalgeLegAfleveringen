@@ -16,6 +16,7 @@ public class GalgeSpilLogikken implements Serializable {
         ArrayList<String> muligeOrd = new ArrayList<String>();
         private String ordet;
         private ArrayList<String> brugteBogstaver = new ArrayList<String>();
+        private ArrayList<String> Vinderliste = new ArrayList<String>();
         private ArrayList<String> forkerteBogstaver = new ArrayList<String>();
         private String synligtOrd;
         private String Navn;
@@ -25,23 +26,7 @@ public class GalgeSpilLogikken implements Serializable {
         private boolean sidsteBogstavVarKorrekt;
         private boolean spilletErVundet =false;
         private boolean spilletErTabt = false;
-        //private GalgeSpilLogikken logik;
 
-
-
-            /*
-        private GalgeSpilLogikken() {};
-        //singleTon pattern - her opretter vi kun et spil
-        public GalgeSpilLogikken getInstace() {
-         if(logik == null){
-                logik = new GalgeSpilLogikken();
-                return logik;
-            }
-            else
-                return logik;
-        }
-
-         */
 
     public String getListStringBrugteOrd() {
         listStringBrugteOrd = "";
@@ -118,8 +103,6 @@ public class GalgeSpilLogikken implements Serializable {
             System.out.println("Nyt spil - det skjulte ord er: " + ordet);
         }
         }
-
-
     void opdaterSynligtOrd() {
             synligtOrd = "";
             spilletErVundet = true;
@@ -158,18 +141,6 @@ public class GalgeSpilLogikken implements Serializable {
             opdaterSynligtOrd();
         }
 
-        public void logStatus() {
-            System.out.println("---------- ");
-            System.out.println("- ordet (skult) = " + ordet);
-            System.out.println("- synligtOrd = " + synligtOrd);
-            System.out.println("- forkerteBogstaver = " + antalForkerteBogstaver);
-            System.out.println("- brugeBogstaver = " + brugteBogstaver);
-            if (spilletErTabt) System.out.println("- SPILLET ER TABT");
-            if (spilletErVundet) System.out.println("- SPILLET ER VUNDET");
-            System.out.println("---------- ");
-        }
-
-
         public static String hentUrl(String url) throws IOException {
             System.out.println("Henter data fra " + url);
             BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
@@ -182,34 +153,10 @@ public class GalgeSpilLogikken implements Serializable {
             return sb.toString();
         }
 
-
-        /**
-         * Hent ord fra DRs forside (https://dr.dk)
-         */
-        public void hentOrdFraDr() throws Exception {
-            String data = hentUrl("https://dr.dk");
-            //System.out.println("data = " + data);
-
-            data = data.substring(data.indexOf("<body")). // fjern headere
-                    replaceAll("<.+?>", " ").toLowerCase(). // fjern tags
-                    replaceAll("&#198;", "æ"). // erstat HTML-tegn
-                    replaceAll("&#230;", "æ"). // erstat HTML-tegn
-                    replaceAll("&#216;", "ø"). // erstat HTML-tegn
-                    replaceAll("&#248;", "ø"). // erstat HTML-tegn
-                    replaceAll("&oslash;", "ø"). // erstat HTML-tegn
-                    replaceAll("&#229;", "å"). // erstat HTML-tegn
-                    replaceAll("[^a-zæøå]", " "). // fjern tegn der ikke er bogstaver
-                    replaceAll(" [a-zæøå] "," "). // fjern 1-bogstavsord
-                    replaceAll(" [a-zæøå][a-zæøå] "," "); // fjern 2-bogstavsord
-
-            System.out.println("data = " + data);
-            System.out.println("data = " + Arrays.asList(data.split("\\s+")));
-            muligeOrd.clear();
-            muligeOrd.addAll(new HashSet<String>(Arrays.asList(data.split(" "))));
-
-            System.out.println("muligeOrd = " + muligeOrd);
+        //TODO få lavet denne Vinderliste
+        public void updatereVinderListe(String Navn, int antalForkerteBogstaver){
+        Vinderliste.add(Navn);
         }
-
 
         /**
          * Hent ord og sværhedsgrad fra et online regneark. Du kan redigere i regnearket, på adressen
