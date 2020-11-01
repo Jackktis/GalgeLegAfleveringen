@@ -15,8 +15,8 @@ public class GalgeSpilLogikken implements Serializable {
         /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
         ArrayList<String> muligeOrd = new ArrayList<String>();
         private String ordet;
-         ArrayList<String> brugteBogstaver = new ArrayList<String>();
-         ArrayList<String> forkerteBogstaver = new ArrayList<String>();
+        private ArrayList<String> brugteBogstaver = new ArrayList<String>();
+        private ArrayList<String> forkerteBogstaver = new ArrayList<String>();
         private String synligtOrd;
         private String Navn;
         private String listStringForkerteOrd;
