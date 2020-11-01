@@ -37,20 +37,19 @@
         android:gravity="center"
         android:hint="sværhedsgrad"
         android:inputType="textPersonName"
-        android:textColorHint="@color/red"
+        android:maxLength="1"
 
+        android:textColorHint="@color/red"
         app:layout_constraintBottom_toTopOf="@+id/start"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="1"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sværhedsgrad"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="72dp"
         android:backgroundTint="@color/red"
         android:text="@string/spil"
         android:textAllCaps="false"
@@ -63,15 +62,32 @@
 
     <TextView
         android:id="@+id/txtSværhedSkala"
-        android:layout_width="151dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="197dp"
         android:gravity="center"
-        android:text="1-12"
+        android:text="fra: 1-12"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/sværhedsgrad"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="428dp"
+        android:backgroundTint="#9E1C1C"
+        android:text="Scoreboard"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtSværhedSkala"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

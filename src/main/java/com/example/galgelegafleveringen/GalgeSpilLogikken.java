@@ -15,9 +15,10 @@ public class GalgeSpilLogikken implements Serializable {
         /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
         ArrayList<String> muligeOrd = new ArrayList<String>();
         private String ordet;
-        private ArrayList<String> brugteBogstaver = new ArrayList<String>();
-        private ArrayList<String> forkerteBogstaver = new ArrayList<String>();
+         ArrayList<String> brugteBogstaver = new ArrayList<String>();
+         ArrayList<String> forkerteBogstaver = new ArrayList<String>();
         private String synligtOrd;
+        private String Navn;
         private String listStringForkerteOrd;
         private String listStringBrugteOrd;
         private int antalForkerteBogstaver = 0;
@@ -109,6 +110,7 @@ public class GalgeSpilLogikken implements Serializable {
             antalForkerteBogstaver = 0;
             spilletErVundet = false;
             spilletErTabt = false;
+
             if (muligeOrd.isEmpty()) {
                 System.out.println("ingen ord under dette sværhedsgrad ");
             } else {

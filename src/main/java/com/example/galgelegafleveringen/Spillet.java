@@ -69,12 +69,14 @@ public class Spillet extends AppCompatActivity {
                         Intent intent = new Intent(Spillet.this, Tabt.class);
                         intent.putExtra("orderet", orderet);
                         startActivity(intent);
+                        finish();
                     }
                     if (spillet.erSpilletVundet()) {
                         Intent intent = new Intent(Spillet.this, Vundet.class);
                         antalForkerteOrd = spillet.getAntalForkerteBogstaver();
                         intent.putExtra("forsøg", antalForkerteOrd);
                         startActivity(intent);
+                        finish();
                     }
                 }
 
