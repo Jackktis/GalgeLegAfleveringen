@@ -3,4 +3,6 @@
     <string name="spil">spil</string>
     <string name="Brugte_ord">brugte bogstaver: </string>
     <string name="Forkerte_ord">forkerte bogstaver: </string>
+    <string name="forsøg">antal forkerte ord er:  </string>
+    <string name="TILLYKKE">TILLYKKE DU VANDT!</string>
 </resources>

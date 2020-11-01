@@ -111,7 +111,8 @@
       android:layout_marginTop="10dp"
       android:ems="6"
       android:inputType="textPersonName"
-      android:hint="indsæt et ord" />
+      android:hint="indsæt et ord"
+      android:maxLength="1"/>
 
   </LinearLayout>
 

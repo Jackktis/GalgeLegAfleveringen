@@ -15,7 +15,7 @@ public class Spillet extends AppCompatActivity {
 
     String orderet, synligOrd, bogstav, brugteBogstav, forkertebogstav;
 
-    int nuværende_billede;
+    int nuværende_billede, antalForkerteOrd;
     TextView TVgætOrderet, TVBrugtBogstav, TVForkertBogstav;
     EditText ETbogstav;
     GalgeSpilLogikken spillet;
@@ -68,10 +68,13 @@ public class Spillet extends AppCompatActivity {
                 if(spillet.erSpilletSlut()){
                     if (spillet.erSpilletTabt()){
                         Intent intent = new Intent(Spillet.this, Tabt.class);
+                        intent.putExtra("orderet", orderet);
                         startActivity(intent);
                     }
                     if (spillet.erSpilletVundet()){
                         Intent intent = new Intent(Spillet.this, Vundet.class);
+                        antalForkerteOrd = spillet.getAntalForkerteBogstaver();
+                        intent.putExtra("forsøg", antalForkerteOrd);
                         startActivity(intent);
                     }
                 }
