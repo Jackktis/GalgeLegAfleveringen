@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,6 +39,7 @@ public class Spillet extends AppCompatActivity {
         // vi hiver vores information fra Start ind her.
         Bundle b = getIntent().getExtras();
 
+        // vi starter vores spil
         try {
             spillet = (GalgeSpilLogikken) b.get("galgeSpilLogik");
             orderet = spillet.getOrdet();
@@ -46,32 +48,29 @@ public class Spillet extends AppCompatActivity {
             synligOrd = spillet.getSynligtOrd();
             TVgætOrderet.setText(synligOrd);
 
-
-            System.out.println("vi har taget dette ord videre: " + orderet);
         } catch (Exception e) {
             System.out.println("logikken blev ikke taget videre");
         }
 
-
+        // Når vi tilføjer et ord i edit tektsen
         ETbogstav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (spillet.erSpilletSlut()){
-                System.out.println("spillet er slut");
-                return;
-            }
+
                 bogstav = ETbogstav.getText().toString();
 
-                spillet.gætBogstav(bogstav);
+                // tjekker om bogstavet indeholder et tal
+                if (!(bogstav.matches(".*\\d.*"))) {
+                    spillet.gætBogstav(bogstav);
                 nuværende_billede = spillet.getAntalForkerteBogstaver();
 
-                if(spillet.erSpilletSlut()){
-                    if (spillet.erSpilletTabt()){
+                if (spillet.erSpilletSlut()) {
+                    if (spillet.erSpilletTabt()) {
                         Intent intent = new Intent(Spillet.this, Tabt.class);
                         intent.putExtra("orderet", orderet);
                         startActivity(intent);
                     }
-                    if (spillet.erSpilletVundet()){
+                    if (spillet.erSpilletVundet()) {
                         Intent intent = new Intent(Spillet.this, Vundet.class);
                         antalForkerteOrd = spillet.getAntalForkerteBogstaver();
                         intent.putExtra("forsøg", antalForkerteOrd);
@@ -89,13 +88,12 @@ public class Spillet extends AppCompatActivity {
                 TVForkertBogstav.setText(forkertebogstav);
                 TVgætOrderet.setText(synligOrd);
 
-
-                System.out.println(nuværende_billede);
                 imgview.setImageResource(billeder[nuværende_billede]);
-
-
-            }
+                ETbogstav.getText().clear();
+            }else {
+                    System.out.println("forkert ord");
+                }
+        }
         });
-
+        }
     }
-}

@@ -19,14 +19,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
-        app:lottie_loop="false"
+        app:lottie_loop="true"
         app:lottie_rawRes="@raw/congratulation"
         app:lottie_url="REPLACE_JSON_URL" />
 
     <TextView
         android:id="@+id/TILLYKKE"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_below="@+id/vinderAnimation"
         android:layout_marginTop="20dp"
         android:text="@string/TILLYKKE"
@@ -78,22 +79,22 @@
         android:layout_marginBottom="184dp"
         android:ems="10"
 
-        android:hint="indtast dit navn"
+        android:hint="@string/indtast_dit_navn"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TILLYKKE"
+        app:layout_constraintTop_toBottomOf="@+id/LLBrugteOrd"
         app:layout_constraintVertical_bias="0.583" />
 
     <Button
         android:id="@+id/BTtilScoreBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="tilføj til scoreboard"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/grøn"
+        android:text="@string/tilføj_til_scoreboard"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

@@ -5,4 +5,6 @@
     <string name="Forkerte_ord">forkerte bogstaver: </string>
     <string name="forsøg">antal forkerte ord er:  </string>
     <string name="TILLYKKE">TILLYKKE DU VANDT!</string>
+    <string name="tilføj_til_scoreboard">tilføj til scoreboard</string>
+    <string name="indtast_dit_navn">indtast dit navn</string>
 </resources>
