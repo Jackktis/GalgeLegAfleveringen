@@ -38,12 +38,14 @@ public class Start extends AppCompatActivity  {
         Sværhed = sværhedgrad.getText().toString();
         TVSværdhedsSkala.setText("henter...\n" );
 
+        // baground thread der henter dataen fra vores regneark
         bgThread.execute(() -> {
             try {
                 GalgeSpilLogikken spillet = new GalgeSpilLogikken();
                 spillet.hentOrdFraRegneark(Sværhed);
 
                 if(!(spillet.getMuligeOrd().isEmpty())) {
+                    // Hvis der er et ord for denne sværhedsgrad, køre den dette.
                     uiThread.post(() -> {
                         spillet.startNytSpil();
                         Intent intent = new Intent(this, Spillet.class);

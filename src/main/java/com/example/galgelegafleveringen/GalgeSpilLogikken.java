@@ -16,12 +16,16 @@ public class GalgeSpilLogikken implements Serializable {
         ArrayList<String> muligeOrd = new ArrayList<String>();
         private String ordet;
         private ArrayList<String> brugteBogstaver = new ArrayList<String>();
+        private ArrayList<String> forkerteBogstaver = new ArrayList<String>();
         private String synligtOrd;
+        private String listStringForkerteOrd;
+        private String listStringBrugteOrd;
         private int antalForkerteBogstaver = 0;
         private boolean sidsteBogstavVarKorrekt;
         private boolean spilletErVundet =false;
         private boolean spilletErTabt = false;
         //private GalgeSpilLogikken logik;
+
 
 
             /*
@@ -38,15 +42,35 @@ public class GalgeSpilLogikken implements Serializable {
 
          */
 
+    public String getListStringBrugteOrd() {
+        listStringBrugteOrd = "";
+
+        for (String s : getBrugteBogstaver())
+        {
+            listStringBrugteOrd += s + "\t";
+        }
+        return listStringBrugteOrd;
+    }
+
+    public String getListStringForkerteOrd() {
+        listStringForkerteOrd= "";
+
+        for (String s : getForkerteBogstaver())
+        {
+            listStringForkerteOrd += s + "\t";
+        }
+        return listStringForkerteOrd;
+    }
+
     public ArrayList<String> getMuligeOrd() {
         return muligeOrd;
     }
 
-    public ArrayList<String> getBrugteBogstaver() {
-            return brugteBogstaver;
-        }
+    public ArrayList<String> getBrugteBogstaver() { return brugteBogstaver; }
 
-        public String getSynligtOrd() {
+    public ArrayList<String> getForkerteBogstaver() { return forkerteBogstaver; }
+
+    public String getSynligtOrd() {
             return synligtOrd;
         }
 
@@ -55,7 +79,12 @@ public class GalgeSpilLogikken implements Serializable {
         }
 
         public int getAntalForkerteBogstaver() {
-            return antalForkerteBogstaver;
+
+        if(antalForkerteBogstaver == 6){
+            spilletErTabt = false;
+        }
+
+        return antalForkerteBogstaver;
         }
 
         public boolean erSidsteBogstavKorrekt() {
@@ -89,7 +118,7 @@ public class GalgeSpilLogikken implements Serializable {
         }
 
 
-        void opdaterSynligtOrd() {
+    void opdaterSynligtOrd() {
             synligtOrd = "";
             spilletErVundet = true;
             for (int n = 0; n < ordet.length(); n++) {
@@ -119,6 +148,7 @@ public class GalgeSpilLogikken implements Serializable {
                 sidsteBogstavVarKorrekt = false;
                 System.out.println("Bogstavet var IKKE korrekt: " + bogstav);
                 antalForkerteBogstaver = antalForkerteBogstaver + 1;
+                forkerteBogstaver.add(bogstav);
                 if (antalForkerteBogstaver > 6) {
                     spilletErTabt = true;
                 }

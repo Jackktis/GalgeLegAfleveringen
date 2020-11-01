@@ -2,29 +2,22 @@ package com.example.galgelegafleveringen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.Serializable;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-
-import com.example.galgelegafleveringen.GalgeSpilLogikken;
-import java.util.ArrayList;
 
 public class Spillet extends AppCompatActivity {
 
-    String orderet, synligOrd, bogstav;
-    TextView TVgætOrderet;
+    String orderet, synligOrd, bogstav, brugteBogstav, forkertebogstav;
+    int nuværende_billede;
+    TextView TVgætOrderet, TVBrugtBogstav, TVForkertBogstav;
     EditText ETbogstav;
     GalgeSpilLogikken spillet;
+    public ImageView imgview;
+    int[] billeder = {R.drawable.forkert1, R.drawable.forkert2,R.drawable.forkert3,R.drawable.forkert4,R.drawable.forkert5,R.drawable.forkert6 };
+
 
 
 
@@ -35,6 +28,9 @@ public class Spillet extends AppCompatActivity {
         setContentView(R.layout.activity_spillet);
          TVgætOrderet = findViewById(R.id.gaette_ord);
          ETbogstav = findViewById(R.id.ETGætBogstav);
+         TVBrugtBogstav = findViewById(R.id.TWgættetOrd);
+         TVForkertBogstav = findViewById(R.id.TWForkertOrd);
+         imgview = (ImageView)findViewById(R.id.galgen);
 
          // vi hiver vores information fra Start ind her.
          Bundle b = getIntent().getExtras();
@@ -58,9 +54,18 @@ public class Spillet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bogstav = ETbogstav.getText().toString();
+                nuværende_billede = spillet.getAntalForkerteBogstaver();
+                imgview.setImageResource(billeder[nuværende_billede]);
+
                 spillet.gætBogstav(bogstav);
                 spillet.opdaterSynligtOrd();
                 synligOrd = spillet.getSynligtOrd();
+
+                brugteBogstav = spillet.getListStringBrugteOrd();
+                forkertebogstav = spillet.getListStringForkerteOrd();
+
+                TVBrugtBogstav.setText(brugteBogstav);
+                TVForkertBogstav.setText(forkertebogstav);
                 TVgætOrderet.setText(synligOrd);
             }
         });
