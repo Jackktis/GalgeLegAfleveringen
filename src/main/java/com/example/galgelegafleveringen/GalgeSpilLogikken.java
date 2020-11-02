@@ -19,7 +19,6 @@ public class GalgeSpilLogikken implements Serializable {
         private ArrayList<String> Vinderliste = new ArrayList<String>();
         private ArrayList<String> forkerteBogstaver = new ArrayList<String>();
         private String synligtOrd;
-        private String Navn;
         private String listStringForkerteOrd;
         private String listStringBrugteOrd;
         private int antalForkerteBogstaver = 0;
@@ -71,10 +70,6 @@ public class GalgeSpilLogikken implements Serializable {
         }
 
         return antalForkerteBogstaver;
-        }
-
-        public boolean erSidsteBogstavKorrekt() {
-            return sidsteBogstavVarKorrekt;
         }
 
         public boolean erSpilletVundet() {

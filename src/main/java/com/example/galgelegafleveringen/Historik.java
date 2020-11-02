@@ -9,8 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Historik extends AppCompatActivity  {
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String TEXT = "text";
     SharedPreferences sp;
     String[] highscoreArr;
     ListView listView;
@@ -34,7 +32,7 @@ public class Historik extends AppCompatActivity  {
                 forkerte = sp.getInt("antalForkerte_gamesCount"+i, 0);
                 orderet = sp.getString("orderet_gameCount"+i, "(orderet)");
 
-               highscoreArr[i] = navn + " havde antal forkerte ord: " + forkerte +"\n" + "Orderet var: " + orderet;
+               highscoreArr[i] = navn + " havde " + forkerte + " forkerte ord" +"\n" + "Orderet var: " + orderet;
 
             }
         }

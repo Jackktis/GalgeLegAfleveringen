@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
 
 public class Start extends AppCompatActivity  {
     Button b, BThighscore;
-    String Sværhed, orderet;
+    String Sværhed;
     EditText sværhedgrad;
     TextView TVSværdhedsSkala;
     Executor bgThread = Executors.newSingleThreadExecutor(); // håndtag til en baggrundstråd
