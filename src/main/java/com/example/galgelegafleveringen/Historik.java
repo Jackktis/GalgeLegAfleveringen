@@ -8,10 +8,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class Scoreboard extends AppCompatActivity  {
+public class Historik extends AppCompatActivity  {
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
     SharedPreferences sp;
@@ -23,7 +20,7 @@ public class Scoreboard extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scoreboard);
+        setContentView(R.layout.activity_historik);
 
 
         sp = getApplicationContext().getSharedPreferences("vinderPrefs", Context.MODE_PRIVATE);

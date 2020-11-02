@@ -36,7 +36,7 @@ public class Start extends AppCompatActivity  {
         BThighscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Start.this, Scoreboard.class);
+                Intent intent = new Intent(Start.this, Historik.class);
                 startActivity(intent);
             }
         });

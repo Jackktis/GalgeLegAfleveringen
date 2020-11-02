@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Scoreboard">
+    tools:context=".Historik">
 
     <TextView
         android:id="@+id/Highscore"
@@ -14,7 +14,7 @@
         android:textColor="@color/white"
         android:gravity="center"
         android:background="#AA0000"
-        android:text="Highscore" />
+        android:text="@string/historik" />
 
     <ListView
         android:id="@+id/Highscoreindhold"
