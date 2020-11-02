@@ -32,7 +32,7 @@
         android:id="@+id/sværhedsgrad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="36dp"
         android:ems="7"
         android:gravity="center"
         android:hint="sværhedsgrad"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sværhedsgrad"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="92dp"
         android:backgroundTint="@color/red"
         android:text="@string/spil"
         android:textAllCaps="false"
@@ -63,18 +63,19 @@
     <TextView
         android:id="@+id/txtSværhedSkala"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="197dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="fra: 1-12"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="@+id/Noose"
+        app:layout_constraintVertical_bias="0.674" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/BTScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

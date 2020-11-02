@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,7 +17,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class Start extends AppCompatActivity  {
-    Button b;
+    Button b, BThighscore;
     String Sværhed, orderet;
     EditText sværhedgrad;
     TextView TVSværdhedsSkala;
@@ -30,6 +31,18 @@ public class Start extends AppCompatActivity  {
 
         sværhedgrad =(EditText) findViewById(R.id.sværhedsgrad);
         TVSværdhedsSkala = findViewById(R.id.txtSværhedSkala);
+
+        BThighscore = (Button) findViewById(R.id.BTScore);
+        BThighscore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Start.this, Scoreboard.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
         b = (Button) findViewById(R.id.start);
         b.setOnClickListener(v -> StartSide());
@@ -59,9 +72,5 @@ public class Start extends AppCompatActivity  {
                 e.printStackTrace();
             }
         });
-
-
-
     }
-
 }
