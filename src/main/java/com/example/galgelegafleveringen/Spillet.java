@@ -74,6 +74,7 @@ public class Spillet extends AppCompatActivity {
                     if (spillet.erSpilletVundet()) {
                         Intent intent = new Intent(Spillet.this, Vundet.class);
                         antalForkerteOrd = spillet.getAntalForkerteBogstaver();
+                        intent.putExtra("orderet", orderet);
                         intent.putExtra("forsøg", antalForkerteOrd);
                         startActivity(intent);
                         finish();

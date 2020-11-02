@@ -17,7 +17,7 @@ public class Scoreboard extends AppCompatActivity  {
     SharedPreferences sp;
     String[] highscoreArr;
     ListView listView;
-    String navn;
+    String navn, orderet;
     int forkerte;
 
     @Override
@@ -30,17 +30,14 @@ public class Scoreboard extends AppCompatActivity  {
         int gamesCount = sp.getInt("gamesCount", 0);
 
         highscoreArr = new String[gamesCount];
-        System.out.println(sp.getAll());
-
 
         if(!(gamesCount == 0)){
             for (int i = 0; i <gamesCount ; i++) {
                 navn = sp.getString("navn_gamesCount" + i, "(Navn)");
-                System.out.println(navn);
                 forkerte = sp.getInt("antalForkerte_gamesCount"+i, 0);
-                System.out.println(forkerte);
+                sp.getString("orderet_gameCount"+gamesCount, "(orderet)");
 
-               highscoreArr[i] = navn + " har så mange forkerte: " + forkerte;
+               highscoreArr[i] = navn + " har så mange forkerte: " + forkerte +"\n" + "";
 
             }
         }

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Vundet extends AppCompatActivity {
-    String navn;
+    String navn, orderet;
     int forsøg;
     TextView spillerenForsøg, tillykke;
     EditText spillerensNavn;
@@ -24,6 +24,7 @@ public class Vundet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vundet);
         forsøg = getIntent().getExtras().getInt("forsøg");
+        orderet = getIntent().getExtras().getString("orderet");
         spillerenForsøg = findViewById(R.id.TWgættetOrd);
         BTscoreBoard = findViewById(R.id.BTtilScoreBoard);
         spillerensNavn = findViewById(R.id.editTextTextPersonName);
@@ -52,6 +53,7 @@ public class Vundet extends AppCompatActivity {
 
         editor.putString("navn_gamesCount"+gamesCount, navn);
         editor.putInt("antalForkerte_gamesCount"+gamesCount, forsøg);
+        editor.putString("orderet_gameCount"+gamesCount, orderet);
         editor.putInt("gamesCount", gamesCount+1);
         editor.apply();
 
