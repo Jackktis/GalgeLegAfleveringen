@@ -53,9 +53,8 @@ public class Vundet extends AppCompatActivity {
         editor.putString("navn_gamesCount"+gamesCount, navn);
         editor.putInt("antalForkerte_gamesCount"+gamesCount, forsøg);
         editor.putInt("gamesCount", gamesCount+1);
-        editor.commit();
+        editor.apply();
 
-        System.out.println("gemt");
         Toast.makeText(Vundet.this, navn + " er gemt i score", Toast.LENGTH_LONG).show();
 
         startActivity(new Intent(Vundet.this, Start.class));
