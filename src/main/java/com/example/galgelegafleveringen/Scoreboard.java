@@ -28,16 +28,16 @@ public class Scoreboard extends AppCompatActivity  {
 
         sp = getApplicationContext().getSharedPreferences("vinderPrefs", Context.MODE_PRIVATE);
         int gamesCount = sp.getInt("gamesCount", 0);
-
+        System.out.println(sp.getAll());
         highscoreArr = new String[gamesCount];
 
         if(!(gamesCount == 0)){
             for (int i = 0; i <gamesCount ; i++) {
                 navn = sp.getString("navn_gamesCount" + i, "(Navn)");
                 forkerte = sp.getInt("antalForkerte_gamesCount"+i, 0);
-                sp.getString("orderet_gameCount"+gamesCount, "(orderet)");
+                orderet = sp.getString("orderet_gameCount"+i, "(orderet)");
 
-               highscoreArr[i] = navn + " har så mange forkerte: " + forkerte +"\n" + "";
+               highscoreArr[i] = navn + " havde antal forkerte ord: " + forkerte +"\n" + "Orderet var: " + orderet;
 
             }
         }
