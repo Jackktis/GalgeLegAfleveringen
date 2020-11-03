@@ -33,9 +33,6 @@ public interface State {
 
     void gætBogstav(String bogstav);
 
-    static String hentUrl(String url) throws IOException {
-        return null;
-    }
     void updatereVinderListe(String Navn, int antalForkerteBogstaver);
 
     void hentOrdFraRegneark(String sværhedsgrader) throws Exception;

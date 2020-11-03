@@ -98,7 +98,7 @@ public class GalgeSpilLogikken implements Serializable, State{
             System.out.println("Nyt spil - det skjulte ord er: " + ordet);
         }
         }
-    void opdaterSynligtOrd() {
+    public void opdaterSynligtOrd() {
             synligtOrd = "";
             spilletErVundet = true;
             for (int n = 0; n < ordet.length(); n++) {

@@ -33,6 +33,8 @@ public class Start extends AppCompatActivity  {
         TVSværdhedsSkala = findViewById(R.id.txtSværhedSkala);
 
         BThighscore = (Button) findViewById(R.id.BTScore);
+
+
         BThighscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
