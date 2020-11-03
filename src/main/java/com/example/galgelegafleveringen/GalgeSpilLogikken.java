@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 
-public class GalgeSpilLogikken implements Serializable {
+public class GalgeSpilLogikken implements Serializable, State{
 
         /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
         ArrayList<String> muligeOrd = new ArrayList<String>();
