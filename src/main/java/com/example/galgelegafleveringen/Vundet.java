@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Vundet extends AppCompatActivity {
+public class
+Vundet extends AppCompatActivity {
     String navn, orderet;
     int forsøg;
     TextView spillerenForsøg, tillykke;

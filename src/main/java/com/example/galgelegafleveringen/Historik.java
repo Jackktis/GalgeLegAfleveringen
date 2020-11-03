@@ -23,7 +23,6 @@ public class Historik extends AppCompatActivity  {
 
         sp = getApplicationContext().getSharedPreferences("vinderPrefs", Context.MODE_PRIVATE);
         int gamesCount = sp.getInt("gamesCount", 0);
-        System.out.println(sp.getAll());
         highscoreArr = new String[gamesCount];
 
         if(!(gamesCount == 0)){
@@ -40,8 +39,5 @@ public class Historik extends AppCompatActivity  {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, highscoreArr);
         listView = findViewById(R.id.Highscoreindhold);
         listView.setAdapter(adapter);
-
-
     }
-
 }
