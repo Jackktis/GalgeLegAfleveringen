@@ -64,15 +64,15 @@ public class SpilletFrag extends Fragment {
 
                             Fragment tabt = new TabtFrag();
                             getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, tabt).addToBackStack(null).commit();
-                            mainActivity.getContext().getPrefs().edit().putString("orderet",orderet);
+                            mainActivity.getContext().getPrefs().edit().putString("orderet",orderet).apply();
                         }
                         if (mainActivity.getContext().erSpilletVundet()) {
 
                             Fragment vundet = new VundetFrag();
                             getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, vundet).addToBackStack(null).commit();
                             antalForkerteOrd = mainActivity.getContext().getAntalForkerteBogstaver();
-                            mainActivity.getContext().getPrefs().edit().putString("orderet",orderet);
-                            mainActivity.getContext().getPrefs().edit().putInt("forsøg",antalForkerteOrd);
+                            mainActivity.getContext().getPrefs().edit().putString("orderet",orderet).apply();
+                            mainActivity.getContext().getPrefs().edit().putInt("forsøg",antalForkerteOrd).apply();
                         }
                     }
 

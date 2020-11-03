@@ -41,9 +41,8 @@ public class StartFrag extends Fragment {
         BThighscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(Start.this, Historik.class);
-                //startActivity(intent);
-
+                Fragment historikFrag = new HistorikFrag();
+                getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, historikFrag ).addToBackStack(null).commit();
             }
         });
 

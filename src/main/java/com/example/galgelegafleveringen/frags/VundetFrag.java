@@ -57,8 +57,8 @@ public class VundetFrag extends Fragment {
     }
 
     public void saveDataTo(){
-        /*
-        sp = getSharedPreferences("vinderPrefs", Context.MODE_PRIVATE);
+
+        sp = mainActivity.getSharedPreferences("vinderPrefs", mainActivity.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         int gamesCount = sp.getInt("gamesCount", 0);
 
@@ -67,10 +67,6 @@ public class VundetFrag extends Fragment {
         editor.putString("orderet_gameCount"+gamesCount, orderet);
         editor.putInt("gamesCount", gamesCount+1);
         editor.apply();
-
-        Toast.makeText(Vundet.this, navn + " er gemt i score", Toast.LENGTH_LONG).show();
-
-         */
 
         Fragment start = new StartFrag();
         getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, start).addToBackStack(null).commit();
