@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
+import com.example.galgelegafleveringen.states.GalgeSpilLogikkenState;
+
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -56,13 +58,13 @@ public class Start extends AppCompatActivity  {
         // baground thread der henter dataen fra vores regneark
         bgThread.execute(() -> {
             try {
-                GalgeSpilLogikken spillet = new GalgeSpilLogikken();
+                GalgeSpilLogikkenState spillet = new GalgeSpilLogikkenState();
                 spillet.hentOrdFraRegneark(Sværhed);
 
                 if(!(spillet.getMuligeOrd().isEmpty())) {
                     // Hvis der er et ord for denne sværhedsgrad, køre den dette.
                     uiThread.post(() -> {
-                        spillet.startNytSpil();
+                        //spillet.onEnterState();
                         Intent intent = new Intent(this, Spillet.class);
                         intent.putExtra("galgeSpilLogik", spillet);
                         startActivity(intent);

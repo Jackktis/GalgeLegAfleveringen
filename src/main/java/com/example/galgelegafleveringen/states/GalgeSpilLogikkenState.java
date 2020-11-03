@@ -1,4 +1,8 @@
-package com.example.galgelegafleveringen;
+package com.example.galgelegafleveringen.states;
+
+import com.example.galgelegafleveringen.Adapter;
+import com.example.galgelegafleveringen.Context;
+import com.example.galgelegafleveringen.State;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +14,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 
-public class GalgeSpilLogikken implements Serializable, State{
+public class GalgeSpilLogikkenState extends Adapter implements Serializable {
 
         /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
         ArrayList<String> muligeOrd = new ArrayList<String>();
@@ -84,8 +88,7 @@ public class GalgeSpilLogikken implements Serializable, State{
             return spilletErTabt || spilletErVundet;
         }
 
-
-        public void startNytSpil() {
+    public void onEnterState(Context context) {
             brugteBogstaver.clear();
             antalForkerteBogstaver = 0;
             spilletErVundet = false;

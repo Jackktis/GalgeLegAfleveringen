@@ -1,16 +1,15 @@
 package com.example.galgelegafleveringen;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.galgelegafleveringen.states.GalgeSpilLogikkenState;
 
 public class Spillet extends AppCompatActivity {
 
@@ -19,7 +18,7 @@ public class Spillet extends AppCompatActivity {
     int nuværende_billede, antalForkerteOrd;
     TextView TVgætOrderet, TVBrugtBogstav, TVForkertBogstav;
     EditText ETbogstav;
-    GalgeSpilLogikken spillet;
+    GalgeSpilLogikkenState spillet;
     public ImageView imgview;
     int[] billeder = {R.drawable.galge,R.drawable.forkert1, R.drawable.forkert2,R.drawable.forkert3,R.drawable.forkert4,R.drawable.forkert5,R.drawable.forkert6 };
 
@@ -41,7 +40,7 @@ public class Spillet extends AppCompatActivity {
 
         // vi starter vores spil
         try {
-            spillet = (GalgeSpilLogikken) b.get("galgeSpilLogik");
+            spillet = (GalgeSpilLogikkenState) b.get("galgeSpilLogik");
             orderet = spillet.getOrdet();
 
             spillet.opdaterSynligtOrd();

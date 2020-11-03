@@ -1,5 +1,6 @@
 package com.example.galgelegafleveringen.states;
 
+import com.example.galgelegafleveringen.Context;
 import com.example.galgelegafleveringen.State;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class StartState implements State {
     }
 
     @Override
-    public void startNytSpil() {
+    public void onEnterState(Context context) {
 
     }
 

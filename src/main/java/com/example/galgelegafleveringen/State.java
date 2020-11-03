@@ -28,7 +28,7 @@ public interface State {
 
     boolean erSpilletSlut();
 
-    void startNytSpil();
+    void onEnterState(Context context);
     void opdaterSynligtOrd();
 
     void gætBogstav(String bogstav);

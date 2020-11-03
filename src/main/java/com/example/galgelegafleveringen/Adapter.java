@@ -1,10 +1,9 @@
-package com.example.galgelegafleveringen.states;
-
-import com.example.galgelegafleveringen.State;
+package com.example.galgelegafleveringen;
 
 import java.util.ArrayList;
 
-public class SpilletState implements State {
+public abstract class Adapter implements State {
+
     @Override
     public String getListStringBrugteOrd() {
         return null;
@@ -61,7 +60,7 @@ public class SpilletState implements State {
     }
 
     @Override
-    public void startNytSpil() {
+    public void onEnterState(Context context) {
 
     }
 

@@ -12,16 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GalgeLegAfleveringen">
-        <activity android:name=".Historik"></activity>
+        <activity android:name=".MainActivity"> <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".Historik" />
         <activity android:name=".Tabt" />
         <activity android:name=".Vundet" />
         <activity android:name=".Spillet" />
         <activity android:name=".Start">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
     </application>
 

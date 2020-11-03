@@ -1,70 +1,93 @@
 package com.example.galgelegafleveringen;
 
-import java.io.IOException;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
+import com.example.galgelegafleveringen.states.StartState;
+
 import java.util.ArrayList;
 
 public class Context {
-
+    private MainActivity ui;
     private State state;
+    private SharedPreferences prefs;
 
-    String getListStringBrugteOrd() {
+
+    public Context(MainActivity ui){
+
+        this.ui = ui;
+        prefs = PreferenceManager.getDefaultSharedPreferences(ui);
+        state = new StartState();
+        state.onEnterState(this);
+
+    }
+
+    public void setState(State state){
+        this.state = state;
+    }
+
+    public SharedPreferences getPrefs(){return prefs;}
+
+
+
+   public String getListStringBrugteOrd() {
        return state.getListStringBrugteOrd();
     }
 
-    String getListStringForkerteOrd(){
+    public String getListStringForkerteOrd(){
         return state.getListStringForkerteOrd();
     }
 
-    ArrayList<String> getMuligeOrd(){
+    public ArrayList<String> getMuligeOrd(){
         return state.getMuligeOrd();
     }
 
-    ArrayList<String> getBrugteBogstaver(){
+    public ArrayList<String> getBrugteBogstaver(){
         return state.getBrugteBogstaver();
     }
 
-    ArrayList<String> getForkerteBogstaver(){
+    public ArrayList<String> getForkerteBogstaver(){
         return state.getForkerteBogstaver();
     }
 
-    String getSynligtOrd(){
+    public String getSynligtOrd(){
         return state.getSynligtOrd();
     }
 
-    String getOrdet(){
+    public String getOrdet(){
         return state.getOrdet();
     }
-    int getAntalForkerteBogstaver(){
+    public int getAntalForkerteBogstaver(){
         return state.getAntalForkerteBogstaver();
     }
 
-    boolean erSpilletVundet(){
+    public boolean erSpilletVundet(){
         return state.erSpilletVundet();
     }
-    boolean erSpilletTabt(){
+    public boolean erSpilletTabt(){
         return state.erSpilletTabt();
     }
 
-    boolean erSpilletSlut(){
+    public boolean erSpilletSlut(){
         return state.erSpilletSlut();
     }
 
-    void startNytSpil(){
-        state.startNytSpil();
+    public void onEnterState(){
+        state.onEnterState(this);
     }
-    void opdaterSynligtOrd(){
+    public void opdaterSynligtOrd(){
         state.opdaterSynligtOrd();
     }
 
-    void gætBogstav(String bogstav){
+    public void gætBogstav(String bogstav){
         state.gætBogstav(bogstav);
     }
 
-    void updatereVinderListe(String Navn, int antalForkerteBogstaver){
+    public void updatereVinderListe(String Navn, int antalForkerteBogstaver){
         state.updatereVinderListe(Navn, antalForkerteBogstaver);
     }
 
-    void hentOrdFraRegneark(String sværhedsgrader) throws Exception{
+    public void hentOrdFraRegneark(String sværhedsgrader) throws Exception{
         state.hentOrdFraRegneark(sværhedsgrader);
     }
 }
