@@ -25,23 +25,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner_af_spilsværhed"
-        android:layout_marginBottom="104dp"
-        android:backgroundTint="@color/red"
-        android:text="@string/spil"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtSværhedSkala"
@@ -56,6 +40,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Noose"
         app:layout_constraintVertical_bias="0.697" />
+
+    <RelativeLayout
+        android:id="@+id/til_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGrey"
+        app:layout_constraintBottom_toTopOf="@+id/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSværhedSkala">
+
+        <Spinner
+            android:id="@+id/spinner_af_spilsværhed"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="-15dp"
+            android:backgroundTint="@color/red" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/til_spinner"
+        android:layout_marginBottom="104dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/spil"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <Button
         android:id="@+id/BTScore"
@@ -74,22 +93,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Spinner
-        android:id="@+id/spinner_af_spilsværhed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/red"
-        android:gravity="center"
-        android:layout_centerVertical="true"
-        android:layout_gravity="center"
-
-
-        app:layout_constraintBottom_toTopOf="@+id/start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSværhedSkala"
-         />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
