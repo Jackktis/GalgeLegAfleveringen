@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     >
 
     <ImageView
         android:id="@+id/Noose"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:src="@drawable/noose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -19,15 +18,15 @@
 
     <ImageView
         android:id="@+id/GalgeLeg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:src="@drawable/galge_leg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
 
     <EditText
         android:id="@+id/sværhedsgrad"
@@ -90,7 +89,8 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/txtSværhedSkala"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
