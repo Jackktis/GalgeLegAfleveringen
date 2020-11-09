@@ -51,7 +51,6 @@
       android:layout_width="match_parent"
       android:layout_height="60dp"
       android:layout_marginTop="20dp"
-      android:layout_below="@+id/galgen"
 
       android:orientation="horizontal">
 
@@ -62,7 +61,8 @@
         android:text="@string/Brugte_ord"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
-        android:layout_marginRight="4dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="4dp"
         android:textSize="20sp" />
 
     <TextView
@@ -89,7 +89,8 @@
         android:text="@string/Forkerte_ord"
         android:textAllCaps="false"
         android:textColor="@color/red"
-        android:layout_marginRight="4dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="4dp"
         android:textSize="20sp" />
     <TextView
         android:id="@+id/TWForkertOrd"
@@ -103,18 +104,18 @@
   </LinearLayout>
 
 
-  <EditText
-      android:id="@+id/ETGætBogstav"
-      android:layout_width="wrap_content"
-      android:gravity="center"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="10dp"
-      android:ems="6"
-      android:textColor="@color/black"
-      android:textColorHint="@color/black"
-      android:inputType="textPersonName"
-      android:hint="indsæt et ord"
-      android:maxLength="1"/>
+    <EditText
+        android:id="@+id/ETGætBogstav"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="6"
+        android:gravity="center"
+        android:hint="indsæt et bogstav her"
+        android:inputType="textPersonName"
+        android:maxLength="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
   </LinearLayout>
 
