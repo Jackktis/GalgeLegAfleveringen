@@ -1,11 +1,27 @@
 <resources>
     <string name="app_name">s180500 Kristoffer Galgeleg</string>
     <string name="spil">spil</string>
-    <string name="Brugte_ord">Brugte bogstaver: </string>
+    <string name="Brugte_ord"><B></B>rugte bogstaver: </string>
     <string name="Forkerte_ord">Forkerte bogstaver: </string>
     <string name="forsøg">antal forkerte ord er:  </string>
     <string name="TILLYKKE">TILLYKKE DU VANDT!</string>
     <string name="tilføj_til_scoreboard">tilføj til Historik</string>
     <string name="indtast_dit_navn">indtast dit navn</string>
     <string name="historik">Historik</string>
+
+    <string-array name="sværhedsgrad">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+
+    </string-array>
 </resources>

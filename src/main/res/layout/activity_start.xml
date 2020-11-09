@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/Noose"
@@ -18,39 +17,22 @@
 
     <ImageView
         android:id="@+id/GalgeLeg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/galge_leg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent" />
-
-    <EditText
-        android:id="@+id/sværhedsgrad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:ems="7"
-        android:gravity="center"
-        android:hint="sværhedsgrad"
-        android:inputType="textPersonName"
-        android:maxLength="1"
-        android:textColor="@color/black"
-
-        android:textColorHint="@color/red"
-        app:layout_constraintBottom_toTopOf="@+id/start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sværhedsgrad"
-        android:layout_marginBottom="84dp"
+        android:layout_below="@+id/spinner_af_spilsværhed"
+        android:layout_marginBottom="104dp"
         android:backgroundTint="@color/red"
         android:text="@string/spil"
         android:textAllCaps="false"
@@ -66,14 +48,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="fra: 1-12"
+        android:text="Vælg sværhedsgrad fra: 1-12"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Noose"
-        app:layout_constraintVertical_bias="0.699" />
+        app:layout_constraintVertical_bias="0.697" />
 
     <Button
         android:id="@+id/BTScore"
@@ -91,6 +73,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spinner_af_spilsværhed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSværhedSkala"
+         />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

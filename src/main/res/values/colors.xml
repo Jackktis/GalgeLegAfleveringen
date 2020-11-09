@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#E10202</color>
     <color name="grøn">#4CAF50</color>
+    <color name="lightGrey">#DCD9D9</color>
 </resources>
