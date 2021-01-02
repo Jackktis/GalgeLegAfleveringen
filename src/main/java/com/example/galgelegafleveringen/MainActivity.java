@@ -16,14 +16,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("hellao");
 
         context = new Context(this);
 
         FrameLayout frameLayout = findViewById(R.id.MainactivityFrame);
         Fragment startFragment = new StartFrag();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.MainactivityFrame,startFragment).addToBackStack(null).commit();
+        if (savedInstanceState==null) getSupportFragmentManager().beginTransaction().add(R.id.MainactivityFrame,startFragment).commit();
     }
 
     public Context getContext(){return context;}

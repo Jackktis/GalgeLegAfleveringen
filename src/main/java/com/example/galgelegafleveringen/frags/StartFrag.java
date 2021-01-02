@@ -1,5 +1,6 @@
 package com.example.galgelegafleveringen.frags;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -53,14 +54,13 @@ public class StartFrag extends Fragment implements AdapterView.OnItemSelectedLis
             }
         });
 
-
-
-
         b = (Button) rod.findViewById(R.id.start);
         b.setOnClickListener(v -> StartSide());
 
         return rod;
     }
+
+
     public void StartSide(){
         TVSværdhedsSkala.setText("henter...\n" );
 

@@ -1,6 +1,7 @@
 package com.example.galgelegafleveringen.frags;
 
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ public class VundetFrag extends Fragment {
     Button BTscoreBoard;
     SharedPreferences sp;
     MainActivity mainActivity;
+    MediaPlayer player;
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle SavedInstanceState) {
 
@@ -40,6 +42,8 @@ public class VundetFrag extends Fragment {
         tillykke = rod.findViewById(R.id.TILLYKKE);
 
         spillerenForsøg.setText(String.valueOf(forsøg));
+        player = MediaPlayer.create(mainActivity, R.raw.bensoundukulele);
+        player.isLooping();
 
         BTscoreBoard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +51,11 @@ public class VundetFrag extends Fragment {
                 navn = spillerensNavn.getText().toString();
                 if(!(navn.isEmpty())) {
                     saveDataTo();
+                    player.stop();
+                    getFragmentManager().popBackStack();
                 } else {
                     tillykke.setText("indtast nu bare dit navn...\n " );
                 }
-
             }
         });
         return rod;
@@ -68,10 +73,14 @@ public class VundetFrag extends Fragment {
         editor.putInt("gamesCount", gamesCount+1);
         editor.apply();
 
-        Fragment start = new StartFrag();
-        getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, start).addToBackStack(null).commit();
         // startActivity(new Intent(Vundet.this, Start.class));
        // finish();
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        player.pause();
+    }
+
 }
 

@@ -40,7 +40,7 @@ public class TabtFrag extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
         Fragment start = new StartFrag();
-        getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, start).addToBackStack(null).commit();
+        getFragmentManager().popBackStack();
 
     }
 }

@@ -1,5 +1,7 @@
 package com.example.galgelegafleveringen.frags;
 
+import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +10,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.MainThread;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.example.galgelegafleveringen.MainActivity;
-import com.example.galgelegafleveringen.states.GalgeSpilLogikkenState;
 import com.example.galgelegafleveringen.R;
 
 public class SpilletFrag extends Fragment {
@@ -22,9 +25,9 @@ public class SpilletFrag extends Fragment {
     public ImageView imgview;
     int[] billeder = {R.drawable.galge,R.drawable.forkert1, R.drawable.forkert2,R.drawable.forkert3,R.drawable.forkert4,R.drawable.forkert5,R.drawable.forkert6 };
     MainActivity mainActivity;
+    MediaPlayer player;
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle SavedInstanceState){
-
         View rod = i.inflate(R.layout.activity_spillet, container, false);
 
         TVgætOrderet = rod.findViewById(R.id.gaette_ord);
@@ -34,8 +37,12 @@ public class SpilletFrag extends Fragment {
         imgview = (ImageView) rod.findViewById(R.id.galgen);
         mainActivity = (MainActivity) getActivity();
 
+        // start musikken, når man spiller
+        player = MediaPlayer.create(mainActivity, R.raw.bensoundepic);
+        player.start();
         // vi starter vores spil
         try {
+
            // spillet = (GalgeSpilLogikken) b.get("galgeSpilLogik");
             orderet = mainActivity.getContext().getOrdet();
 
@@ -62,17 +69,21 @@ public class SpilletFrag extends Fragment {
                     if (mainActivity.getContext().erSpilletSlut()) {
                         if (mainActivity.getContext().erSpilletTabt()) {
 
+                            getFragmentManager().popBackStack();
                             Fragment tabt = new TabtFrag();
                             getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, tabt).addToBackStack(null).commit();
                             mainActivity.getContext().getPrefs().edit().putString("orderet",orderet).apply();
+                            player.stop();
                         }
                         if (mainActivity.getContext().erSpilletVundet()) {
 
+                            getFragmentManager().popBackStack();
                             Fragment vundet = new VundetFrag();
                             getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, vundet).addToBackStack(null).commit();
                             antalForkerteOrd = mainActivity.getContext().getAntalForkerteBogstaver();
                             mainActivity.getContext().getPrefs().edit().putString("orderet",orderet).apply();
                             mainActivity.getContext().getPrefs().edit().putInt("forsøg",antalForkerteOrd).apply();
+                            player.stop();
                         }
                     }
 
@@ -94,5 +105,10 @@ public class SpilletFrag extends Fragment {
             }
         });
         return rod;
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        player.pause();
     }
 }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">s180500 Kristoffer Galgeleg</string>
     <string name="spil">spil</string>
-    <string name="Brugte_ord"><B></B>rugte bogstaver: </string>
+    <string name="Brugte_ord"><B></B>Brugte bogstaver: </string>
     <string name="Forkerte_ord">Forkerte bogstaver: </string>
     <string name="forsøg">antal forkerte ord er:  </string>
     <string name="TILLYKKE">TILLYKKE DU VANDT!</string>

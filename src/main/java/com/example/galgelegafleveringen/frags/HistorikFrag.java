@@ -47,7 +47,6 @@ public class HistorikFrag extends Fragment {
         listView = rod.findViewById(R.id.Highscoreindhold);
         listView.setAdapter(adapter);
 
-
         return rod;
     }
 }
