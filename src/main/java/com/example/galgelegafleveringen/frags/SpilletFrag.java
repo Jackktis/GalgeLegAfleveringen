@@ -39,6 +39,7 @@ public class SpilletFrag extends Fragment {
 
         // start musikken, når man spiller
         player = MediaPlayer.create(mainActivity, R.raw.bensoundepic);
+        player.isLooping();
         player.start();
         // vi starter vores spil
         try {

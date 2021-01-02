@@ -1,5 +1,6 @@
 package com.example.galgelegafleveringen.frags;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ public class TabtFrag extends Fragment implements View.OnClickListener {
     TextView TWRigtigtOrd;
     Button BTPrøvIgen;
     MainActivity mainActivity;
+    MediaPlayer player;
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle SavedInstanceState) {
 
@@ -29,7 +31,8 @@ public class TabtFrag extends Fragment implements View.OnClickListener {
         TWRigtigtOrd = rod.findViewById(R.id.TWDetRigtigOrd);
         BTPrøvIgen = rod.findViewById(R.id.BTPrøvIgen);
         TWRigtigtOrd.setText(rigtigtOrd);
-
+        player = MediaPlayer.create(mainActivity, R.raw.bensoundofeliasdream);
+        player.start();
 
         BTPrøvIgen.setOnClickListener(this);
 
@@ -41,6 +44,12 @@ public class TabtFrag extends Fragment implements View.OnClickListener {
 
         Fragment start = new StartFrag();
         getFragmentManager().popBackStack();
+        player.stop();
 
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        player.pause();
     }
 }
