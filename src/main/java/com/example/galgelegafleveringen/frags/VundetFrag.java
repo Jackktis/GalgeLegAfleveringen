@@ -77,6 +77,7 @@ public class VundetFrag extends Fragment {
        // finish();
     }
 
+
     public void saveDataToScoreboard(){
         int forkerte0, forkerte1, forkerte2, forkerte3, forkerte4;
         String forrigNavn0, forrigNavn1, forrigNavn2, forrigNavn3, forrigNavn4;
@@ -93,17 +94,17 @@ public class VundetFrag extends Fragment {
         forkerte3 = sp.getInt("antalForkerte_gamesCount" + 3, forsøg);
         forkerte4 = sp.getInt("antalForkerte_gamesCount" + 4, forsøg);
 
-        forrigNavn0 = sp.getString("navn_gamesCount" + 0, "(Navn)");
-        forrigNavn1 = sp.getString("navn_gamesCount" + 1, "(Navn)");
-        forrigNavn2 = sp.getString("navn_gamesCount" + 2, "(Navn)");
-        forrigNavn3 = sp.getString("navn_gamesCount" + 3, "(Navn)");
-        forrigNavn4 = sp.getString("navn_gamesCount" + 4, "(Navn)");
+        forrigNavn0 = sp.getString("navn_gamesCount" + 0, null);
+        forrigNavn1 = sp.getString("navn_gamesCount" + 1, null);
+        forrigNavn2 = sp.getString("navn_gamesCount" + 2, null);
+        forrigNavn3 = sp.getString("navn_gamesCount" + 3, null);
+        forrigNavn4 = sp.getString("navn_gamesCount" + 4, null);
 
 
-        forrigOrd0 = sp.getString("orderet_gameCount" + 0, "(orderet)");
-        forrigOrd1 = sp.getString("orderet_gameCount" + 1, "(orderet)");
-        forrigOrd2 = sp.getString("orderet_gameCount" + 2, "(orderet)");
-        forrigOrd3 = sp.getString("orderet_gameCount" + 3, "(orderet)");
+        forrigOrd0 = sp.getString("orderet_gameCount" + 0, null);
+        forrigOrd1 = sp.getString("orderet_gameCount" + 1, null);
+        forrigOrd2 = sp.getString("orderet_gameCount" + 2, null);
+        forrigOrd3 = sp.getString("orderet_gameCount" + 3, null);
 
         for (int i = 0; i < 1; i++) {
             // første plads
@@ -112,111 +113,116 @@ public class VundetFrag extends Fragment {
                     editor.putString("navn_gamesCount" + 1, forrigNavn0);
                     editor.putInt("antalForkerte_gamesCount" + 1, forkerte0);
                     editor.putString("orderet_gameCount" + 1, forrigOrd0);
-                    editor.putInt("gamesCount", 1);
 
-                    if(forrigNavn2 != null) {
+
+                    if (forrigNavn1 != null) {
                         editor.putString("navn_gamesCount" + 2, forrigNavn1);
                         editor.putInt("antalForkerte_gamesCount" + 2, forkerte1);
                         editor.putString("orderet_gameCount" + 2, forrigOrd1);
-                        editor.putInt("gamesCount", 2);
                     }
 
-                    if(forrigNavn3 != null) {
+                    if (forrigNavn2 != null) {
                         editor.putString("navn_gamesCount" + 3, forrigNavn2);
                         editor.putInt("antalForkerte_gamesCount" + 3, forkerte2);
                         editor.putString("orderet_gameCount" + 3, forrigOrd2);
+                    }
+                    if (forrigNavn3 != null) {
                         editor.putString("navn_gamesCount" + 4, forrigNavn3);
                         editor.putInt("antalForkerte_gamesCount" + 4, forkerte3);
                         editor.putString("orderet_gameCount" + 4, forrigOrd3);
-                        editor.putInt("gamesCount", 4);
                     }
                 }
 
                 editor.putString("navn_gamesCount" + 0, navn);
                 editor.putInt("antalForkerte_gamesCount" + 0, forsøg);
                 editor.putString("orderet_gameCount" + 0, orderet);
-                editor.putInt("gamesCount", 0);
+                editor.putInt("gamesCount", 5);
                 editor.apply();
                 break;
             }
 
             // anden plads
-            if (forkerte1 > forsøg || forrigNavn1 == null){
-                if(forrigNavn1 != null) {
+            if (forkerte1 > forsøg || forrigNavn1 == null) {
+                if (forrigNavn1 != null) {
                     editor.putString("navn_gamesCount" + 2, forrigNavn1);
                     editor.putInt("antalForkerte_gamesCount" + 2, forkerte1);
                     editor.putString("orderet_gameCount" + 2, forrigOrd1);
-                    editor.putInt("gamesCount", 2);
 
-                    if(forrigNavn3 != null) {
+                    if (forrigNavn2 != null) {
                         editor.putString("navn_gamesCount" + 3, forrigNavn2);
                         editor.putInt("antalForkerte_gamesCount" + 3, forkerte2);
                         editor.putString("orderet_gameCount" + 3, forrigOrd2);
+                    }
+                    if (forrigNavn3 != null) {
                         editor.putString("navn_gamesCount" + 4, forrigNavn3);
                         editor.putInt("antalForkerte_gamesCount" + 4, forkerte3);
                         editor.putString("orderet_gameCount" + 4, forrigOrd3);
-                        editor.putInt("gamesCount", 4);
                     }
                 }
+
                 editor.putString("navn_gamesCount" + 1, navn);
                 editor.putInt("antalForkerte_gamesCount" + 1, forsøg);
                 editor.putString("orderet_gameCount" + 1, orderet);
-                editor.putInt("gamesCount", 1);
+                editor.putInt("gamesCount", 5);
                 editor.apply();
                 break;
             }
 
             // tredje plads
             if (forkerte2 > forsøg || forrigNavn2 == null){
-                if(forrigNavn2 != null) {
+                if (forrigNavn2 != null) {
                     editor.putString("navn_gamesCount" + 3, forrigNavn2);
                     editor.putInt("antalForkerte_gamesCount" + 3, forkerte2);
                     editor.putString("orderet_gameCount" + 3, forrigOrd2);
-                    editor.putInt("gamesCount", 3);
 
-                    if(forrigNavn3 != null) {
-                        editor.putString("navn_gamesCount" + 4, forrigNavn2);
-                        editor.putInt("antalForkerte_gamesCount" + 4, forkerte2);
-                        editor.putString("orderet_gameCount" + 4, forrigOrd2);
-                        editor.putString("navn_gamesCount" + 5, forrigNavn3);
-                        editor.putInt("antalForkerte_gamesCount" + 5, forkerte3);
-                        editor.putString("orderet_gameCount" + 5, forrigOrd3);
-                        editor.putInt("gamesCount", 5);
+                    if (forrigNavn3 != null) {
+                        editor.putString("navn_gamesCount" + 4, forrigNavn3);
+                        editor.putInt("antalForkerte_gamesCount" + 4, forkerte3);
+                        editor.putString("orderet_gameCount" + 4, forrigOrd3);
                     }
                 }
+
                 editor.putString("navn_gamesCount" + 2, navn);
                 editor.putInt("antalForkerte_gamesCount" + 2, forsøg);
                 editor.putString("orderet_gameCount" + 2, orderet);
-                editor.putInt("gamesCount", 2);
+                editor.putInt("gamesCount", 5);
                 editor.apply();
                 break;
             }
 
             // fjerde plads
             if (forkerte3 > forsøg || forrigNavn3 == null){
-                if(forrigNavn4 != null) {
-                    editor.putString("navn_gamesCount" + 5, forrigNavn3);
-                    editor.putInt("antalForkerte_gamesCount" + 5, forkerte3);
-                    editor.putString("orderet_gameCount" + 5, forrigOrd3);
-                    editor.putInt("gamesCount", 5);
+                if (forrigNavn3 != null) {
+                    editor.putString("navn_gamesCount" + 4, forrigNavn3);
+                    editor.putInt("antalForkerte_gamesCount" + 4, forkerte3);
+                    editor.putString("orderet_gameCount" + 4, forrigOrd3);
                 }
-                editor.putString("navn_gamesCount" + 4, navn);
-                editor.putInt("antalForkerte_gamesCount" + 4, forsøg);
-                editor.putString("orderet_gameCount" + 4, orderet);
-                editor.putInt("gamesCount", 4);
+
+                editor.putString("navn_gamesCount" + 3, navn);
+                editor.putInt("antalForkerte_gamesCount" + 3, forsøg);
+                editor.putString("orderet_gameCount" + 3, orderet);
                 editor.apply();
                 break;
             }
 
             // femte plads
             if (forkerte4 > forsøg || forrigNavn4 == null) {
-                editor.putString("navn_gamesCount" + 5, navn);
-                editor.putInt("antalForkerte_gamesCount" + 5, forsøg);
-                editor.putString("orderet_gameCount" + 5, orderet);
+                editor.putString("navn_gamesCount" + 4, navn);
+                editor.putInt("antalForkerte_gamesCount" + 4, forsøg);
+                editor.putString("orderet_gameCount" + 4, orderet);
                 editor.putInt("gamesCount", 5);
                 editor.apply();
                 break;
             }
+            if (forrigNavn0 == null || forrigOrd0 == null){
+                editor.putString("navn_gamesCount" + 0, navn);
+                editor.putInt("antalForkerte_gamesCount" + 0, forsøg);
+                editor.putString("orderet_gameCount" + 0, orderet);
+                editor.putInt("gamesCount", 5);
+                editor.apply();
+                break;
+            }
+
         }
 
 
