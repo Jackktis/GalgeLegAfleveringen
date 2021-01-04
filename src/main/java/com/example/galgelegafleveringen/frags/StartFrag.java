@@ -1,6 +1,5 @@
 package com.example.galgelegafleveringen.frags;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,7 +22,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class StartFrag extends Fragment implements AdapterView.OnItemSelectedListener{
-    Button b, BThighscore;
+    Button b, BTHistorik, BTScore;
     String Sværhed;
     TextView TVSværdhedsSkala;
     Executor bgThread = Executors.newSingleThreadExecutor(); // håndtag til en baggrundstråd
@@ -36,7 +34,9 @@ public class StartFrag extends Fragment implements AdapterView.OnItemSelectedLis
 
         View rod = i.inflate(R.layout.activity_start, container, false);
         TVSværdhedsSkala = rod.findViewById(R.id.txtSværhedSkala);
-        BThighscore = (Button) rod.findViewById(R.id.BTScore);
+
+        BTHistorik = (Button) rod.findViewById(R.id.BTHistorik);
+        BTScore = (Button) rod.findViewById(R.id.BTScoreboard);
         mainActivity =(MainActivity) getActivity();
 
         Spinner spinner = rod.findViewById(R.id.spinner_af_spilsværhed);
@@ -46,10 +46,18 @@ public class StartFrag extends Fragment implements AdapterView.OnItemSelectedLis
         spinner.setOnItemSelectedListener(this);
 
 
-        BThighscore.setOnClickListener(new View.OnClickListener() {
+        BTHistorik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment historikFrag = new HistorikFrag();
+                getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, historikFrag ).addToBackStack(null).commit();
+            }
+        });
+
+        BTScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment historikFrag = new ScoreFrag();
                 getFragmentManager().beginTransaction().replace(R.id.MainactivityFrame, historikFrag ).addToBackStack(null).commit();
             }
         });
@@ -59,6 +67,7 @@ public class StartFrag extends Fragment implements AdapterView.OnItemSelectedLis
 
         return rod;
     }
+
 
 
     public void StartSide(){

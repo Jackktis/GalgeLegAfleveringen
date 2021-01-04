@@ -8,6 +8,7 @@
     <string name="tilføj_til_scoreboard">tilføj til Historik</string>
     <string name="indtast_dit_navn">indtast dit navn</string>
     <string name="historik">Historik</string>
+    <string name="scoreboard">Scoreboard</string>
 
     <string-array name="sværhedsgrad">
         <item>1</item>
